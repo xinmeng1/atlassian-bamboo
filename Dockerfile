@@ -34,9 +34,9 @@ RUN set -x \
     && chmod -R 700                     "${BAMBOO_INSTALL}/work" \
     && cd ${BAMBOO_INSTALL}/atlassian-bamboo/WEB-INF/lib \
     && curl -SLO "https://gist.github.com/TommyLau/8a5ce4629d027f7884e6/raw/9bc3df0e1134c0a290665bdbec041a847a903cef/atlassian-extras-decoder-v2-3.3.0.jar" \
+    && curl -SLO "https://raw.githubusercontent.com/xinmeng1/ShareFiles/master/mysql-connector-java-5.1.39-bin.jar" \
     && cd ../atlassian-bundled-plugins/ \
     && curl -SLO "https://gist.github.com/TommyLau/8a5ce4629d027f7884e6/raw/3e6d810620448e15317d24db24bbd095a7bc188b/atlassian-universal-plugin-manager-plugin-2.19.4.jar" \
-    && curl -SLO "https://github.com/xinmeng1/ShareFiles/blob/master/mysql-connector-java-5.1.39-bin.jar" \
     && chown -R ${RUN_USER}:${RUN_GROUP} ${BAMBOO_INSTALL} \
     && echo "bamboo.home=${BAMBOO_HOME}" > ${BAMBOO_INSTALL}/atlassian-bamboo/WEB-INF/classes/bamboo-init.properties \
     && mv ${BAMBOO_INSTALL}/atlassian-bamboo/WEB-INF/lib/javax.mail-*.jar ${BAMBOO_INSTALL}/lib
